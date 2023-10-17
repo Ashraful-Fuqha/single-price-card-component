@@ -130,7 +130,7 @@ main section:nth-child(3) p{
         opacity: 0;
     }
     100%{
-        transform: translate3d(0);
+        transform: translate3d(0,0,0);
         opacity: 1;
     }
 }
