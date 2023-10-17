@@ -1,0 +1,217 @@
+:root{
+    /* Colors */
+    --Cyan:hsl(179, 62%, 43%);
+    --Bright-Yellow: hsl(71, 73%, 54%);
+    --Light-Gray:hsl(204, 43%, 93%);
+    --Grayish-Blue:hsl(218, 22%, 67%);
+    /* Font-Family */
+    --Karla: 'Karla', sans-serif;
+    --Fraunces: 'Fraunces', sans-serif;
+    --Montserrat: 'Montserrat', sans-serif;
+}
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+}
+
+body{
+    background-color: var(--Grayish-Blue);
+    text-align: left;
+    padding: 1.9rem;
+}
+
+main{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+                    "first"
+                    "second"
+                    "third";
+    place-items: stretch;
+    transition: all 2s ease-out;
+    animation: introLoad 1s ease-in;
+}
+
+main section:nth-child(1){
+    background-color: var(--Light-Gray);
+    border-radius: .5rem .5rem 0 0;
+    padding: 20px;
+    grid-area: first;
+}
+
+main section:nth-child(2){
+    background-color: var(--Cyan);
+    padding: 20px;
+    grid-area: second;
+}
+
+main section:nth-child(3){
+    background-color: hsl(177, 39%, 58%);
+    grid-area: third;
+    padding: 20px;
+    border-radius: 0 0 .3rem .3rem;
+}
+
+main section:nth-child(1) h1{
+    color: var(--Cyan);
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-bottom: .9rem;
+}
+
+main section:nth-child(1) h2{
+    color: var(--Bright-Yellow);
+    font-size: .9rem;
+    margin-bottom: .9rem;
+}
+
+main section:nth-child(1) p{
+    color: var(--Grayish-Blue);
+    font-size: .8rem;
+}
+
+main section:nth-child(2) h2{
+    font-size: 1.1rem;
+    color: var(--Light-Gray);
+    margin-bottom: .9rem;
+}
+
+main section:nth-child(2) h1{
+    font-size: 2rem;
+    color: var(--Light-Gray);
+}
+
+main section:nth-child(2) span{
+    font-size: .8rem;
+    color: hsl(177, 100%, 78%);
+}
+
+main section:nth-child(2) p{
+    font-size: .9rem;
+    color: var(--Light-Gray);
+    margin-bottom: 2.5rem;
+}
+
+main section:nth-child(2) button{
+    width: 100%;
+    padding: .8rem;
+    color: var(--Light-Gray);
+    font-size: .9rem;
+    font-family: var(--Karla);
+    font-weight: 700;
+    background-color: var(--Bright-Yellow);
+    border: none;
+    border-radius: .5rem;
+}
+
+main section:nth-child(3) h3{
+    color: var(--Light-Gray);
+    margin-bottom: .9rem;
+    font-size: 1.3rem;
+}
+
+main section:nth-child(3) p{
+    color: hsla(179, 84%, 15%,.4);
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+@keyframes introLoad{
+    0%{
+        transform:translate3d(-200px, -200px, 100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate3d(0);
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width:1000px){
+    body{
+        margin: 8rem 20rem;
+    }
+    main{
+        min-height: 100vh;
+        grid-template-columns: repeat(2,420px);
+        grid-template-rows: 230px 270px ;
+        grid-template-areas: 
+                    "first first"
+                    "second third";
+        place-items: stretch;
+        row-gap: 0;
+    }
+    main section:nth-child(1){
+        grid-area: first;
+        padding: 2.4rem 3rem 0 3rem;
+        border-radius: .5rem .5rem 0 0;
+    }
+
+    main section:nth-child(2){
+        grid-area: second;
+        padding: 30px 40px;
+        border-radius: 0 0 0 .5rem;
+    }
+
+    main section:nth-child(3){
+        grid-area: third;
+        padding: 30px 40px;
+        border-radius: 0 0 .5rem 0;
+    }
+
+    main section:nth-child(1) h1{
+        font-size: 1.8rem;
+        margin-bottom: 1.3rem;
+    }
+    main section:nth-child(1) h2{
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+    }
+
+    main section:nth-child(1) p{
+        font-size: 1.3rem;
+        font-weight: 500;
+
+    }
+    main section:nth-child(2) h2{
+        font-size: 1.5rem;
+        margin-bottom: .9rem;
+    }
+
+    main section:nth-child(2) h1{
+        font-size: 2.5rem;
+    }
+
+    main section:nth-child(2) span{
+        font-size: .9rem;
+    }
+
+    main section:nth-child(2) p{
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    main section:nth-child(2) button{
+        padding: 1.2rem;
+        font-size: 1.2rem;
+    }
+
+    main section:nth-child(3) h3{
+        font-size: 1.5rem;
+    }
+
+    main section:nth-child(3) p{
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+}
