@@ -137,7 +137,9 @@ main section:nth-child(3) p{
 
 @media only screen and (min-width:1000px){
     body{
-        margin: 8rem 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     main{
         min-height: 100vh;
@@ -147,7 +149,6 @@ main section:nth-child(3) p{
                     "first first"
                     "second third";
         place-items: stretch;
-        row-gap: 0;
     }
     main section:nth-child(1){
         grid-area: first;
